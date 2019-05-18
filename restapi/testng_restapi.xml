@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test executed using local WebDriver">
+    <!--e.g.mvn clean test -P localRunner -Duser.url="https://dev.cst.scopicdev.com/" -Duser.browser=chrome-->
+    <test name="Tests run in Browser provided by command line parameter" preserve-order="true">
+        <!--        <parameter name="browserName" value="${user.browser}"/>-->
+        <!--        #Following line should be uncommented if you run *.xml form InetlliJ IDEA-->
+        <parameter name="browserName" value="chrome"/>
+        <!--<parameter name="browserName" value="firefox"/>-->
+        <classes>
+            <class name="com.toptal.tests.DatasetsAPITest">
+                <methods>
+                    <include name="TC01_POST_CreateDataset" />
+                    <include name="TC02_GET_RetrieveDatasetById" />
+                    <include name="TC03_PATCH_UpdateDatasetById" />
+                    <include name="TC04_DELETE_DeleteDatasetById" />
+                    <include name="TC05_GET_CheckDatasetIsDeleted" />
+                </methods>
+            </class>
+            <class name="com.toptal.tests.NavigationAPITest"></class>
+            <class name="com.toptal.tests.TilequeryAPITest"></class>
+        </classes>
+    </test>
+
+</suite>

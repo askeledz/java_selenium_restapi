@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test executed using local WebDriver">
+    <listeners>
+        <listener class-name="com.toptal.driver.LocalWebDriverListener"/>
+        <listener class-name="com.toptal.util.AnnotationTransformer"/>
+        <listener class-name="com.toptal.util.LogListener"/>
+    </listeners>
+
+    <!--e.g.mvn clean test -P localRunner -Duser.url="https://dev.cst.scopicdev.com/" -Duser.browser=chrome-->
+    <test name="Tests run in Browser provided by command line parameter" preserve-order="true">
+<!--             <parameter name="browserName" value="${user.browser}"/>-->
+        <!--        #Following line should be uncommented if you run *.xml form InetlliJ IDEA-->
+        <parameter name="browserName" value="chrome"/>
+<!--        <parameter name="browserName" value="firefox"/>-->
+        <classes>
+            <class name="com.toptal.tests.RegistrationTest">
+                <methods>
+                    <include name="T01_RegistrationTestInvalid"/>
+                    <exclude name="T02_RegistrationTestValid"/>
+                </methods>
+            </class>
+            <class name="com.toptal.tests.LoginTest"></class>
+            <class name="com.toptal.tests.SearchProductsTest"></class>
+            <class name="com.toptal.tests.ShoppingCartTest">
+                                            <methods>
+                                                <include name="T08_AddProductsToCart"/>
+                                                <include name="T09_RemoveProductsFromCart"/>
+                                            </methods>
+            </class>
+            <class name="com.toptal.tests.CheckoutTest">
+                <methods>
+                    <include name="TC10_BankTransferPayment"/>
+                    <include name="TC11_CashOnDeliveryPayment"/>
+                    <include name="TC12_CreditCardPayment"/>
+                    <include name="TC13_CheckoutNegative"/>
+                    <include name="TC14_CleanUp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
