@@ -31,7 +31,7 @@
             <class name="com.toptal.tests.CheckoutTest">
                 <methods>
                     <include name="TC10_BankTransferPayment"/>
-                    <include name="TC11_CashOnDeliveryPayment"/>
+                    <exclude name="TC11_CashOnDeliveryPayment"/>
                     <include name="TC12_CreditCardPayment"/>
                     <include name="TC13_CheckoutNegative"/>
                     <include name="TC14_CleanUp"/>
