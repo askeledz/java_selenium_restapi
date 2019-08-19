@@ -53,7 +53,8 @@ public class LocalDriverFactory {
             options.addArguments("disable-infobars");
             options.addArguments("--window-size=1920,1080");
 
-            WebDriverManager.chromedriver().version("2.46").setup();
+            //WebDriverManager.chromedriver().version("2.46").setup();
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
             //logger.info("Browser name: " + browserName);
