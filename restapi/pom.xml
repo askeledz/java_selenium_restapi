@@ -158,7 +158,7 @@
             <!--Send or not results of multipleDealerships test back to the main app or not FALSE by default-->
             <multipleDealershipsSendResuls>False</multipleDealershipsSendResuls>
             <aspectj.version>1.9.2</aspectj.version>
-            <log4j2.version>2.11.2</log4j2.version>
+            <log4j2.version>2.16.0</log4j2.version>
 
         </properties>
 </project>
